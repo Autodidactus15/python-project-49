@@ -20,16 +20,16 @@ def main():
        number_2 = random.randint(1, 100)
        random_operation = random.choice((multiply, substract, sum, divide))
        if random_operation == multiply:
-          print(f"Question {number_1} * {number_2} ")
+          print(f"Question: {number_1} * {number_2} ")
           answer = number_1 * number_2
        elif random_operation == substract:
-          print(f'Question {number_1} - {number_2} ')
+          print(f'Question: {number_1} - {number_2} ')
           answer = number_1 - number_2
        elif random_operation == sum:
-          print(f'Question {number_1} + {number_2} ')
+          print(f'Question: {number_1} + {number_2} ')
           answer = number_1 + number_2
        else:
-          print(f'Question {number_1} // {number_2}')
+          print(f'Question: {number_1} // {number_2}')
           answer = number_1 // number_2
        user_answer = input("Your answer: ")
        if user_answer.isalpha():
