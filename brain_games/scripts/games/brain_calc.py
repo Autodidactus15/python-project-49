@@ -18,7 +18,7 @@ def main():
     while counter < 3:
        number_1 = random.randint(1, 100)
        number_2 = random.randint(1, 100)
-       random_operation = random.choice((multiply, substract, sum, d))
+       random_operation = random.choice((multiply, substract, sum))
        if random_operation == multiply:
           print(f"Question: {number_1} * {number_2} ")
           answer = number_1 * number_2
