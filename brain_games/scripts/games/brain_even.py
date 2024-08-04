@@ -9,7 +9,7 @@ def main():
     counter = 0
     while counter < 3:
         number = random.randint(1, 1000)
-        print(f"Question {number}")
+        print(f"Question: {number}")
         if number % 2 == 0:
            answer = 'yes'
         else:
