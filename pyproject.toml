@@ -1,22 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = "Games Overview
-
-1. Brain-Prime
-   - Identify whether a given number is prime.
-
-2. Brain-GCD
-   - Calculate the greatest common divisor (GCD) of pairs of numbers.
-
-3. Brain-Progression
-   - Guess the missing number in an arithmetic sequence.
-
-4. Brain-Even
-   - Determine whether a series of numbers are even or odd.
-
-5. Brain-Calc
-   - Solve a variety of math problems requiring quick responses."
+description = "1. Brain-Prime - Identify whether a given number is prime. 2. Brain-GCD - Calculate the greatest common divisor (GCD) of pairs of numbers. 3. Brain-Progression - Guess the missing number in an arithmetic sequence. 4. Brain-Even - Determine whether a series of numbers are even or odd. 5. Brain-Calc - Solve a variety of math problems requiring quick responses."
 
 authors = ["Ivanov Egor <ghora0907@gmail.com>"]
 classifiers = [
@@ -29,8 +14,8 @@ classifiers = [
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10"
-  "Programming Language :: Python :: 3.11"
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
 ]
 repository =  "https://github.com/Autodidactus15/python-project-49"  
 readme = "README.md"
