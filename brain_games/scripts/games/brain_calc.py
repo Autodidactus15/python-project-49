@@ -28,6 +28,7 @@ def main():
        else:
           print(f'Question: {number_1} + {number_2} ')
           answer = number_1 + number_2
+       user_answer = input("Your answer: ")
        if user_answer.isalpha():
            print("Please, insert a number")
            break
