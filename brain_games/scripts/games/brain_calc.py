@@ -25,7 +25,7 @@ def main():
        elif random_operation == substract:
           print(f'Question: {number_1} - {number_2} ')
           answer = number_1 - number_2
-       else random_operation == sum:
+       else:
           print(f'Question: {number_1} + {number_2} ')
           answer = number_1 + number_2
        if user_answer.isalpha():
