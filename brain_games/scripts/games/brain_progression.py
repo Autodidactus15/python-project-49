@@ -25,7 +25,7 @@ def main():
         pr_list = progression(number_1, number_2)
         old_pr_list = pr_list.copy()
         answer = old_pr_list[number_3]
-        pr_list[number_3] = "..."   
+        pr_list[number_3] = ".."   
         print(f'Question: {pr_list[0]}, {pr_list[1]}, {pr_list[2]}, {pr_list[3]}, {pr_list[4]}, {pr_list[5]}, {pr_list[6]}, {pr_list[7]}, {pr_list[8]}, {pr_list[9]}')
         user_answer = input("Your answer: ")
         if user_answer.isalpha():
