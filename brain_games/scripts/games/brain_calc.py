@@ -33,11 +33,6 @@ def main():
             answer = sum_numbers(number_1, number_2)
         
         user_answer = input("Your answer: ")
-        
-        if not user_answer.isdigit():
-            print("Please, insert a number")
-            break
-        
         user_answer = int(user_answer)
         
         if user_answer == answer:
