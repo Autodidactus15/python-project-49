@@ -3,7 +3,6 @@ import random
 
 
 def is_prime(n):
-    """Check if a number is prime."""
     if n <= 1:
         return False
     for i in range(2, int(n**0.5) + 1):
@@ -18,7 +17,7 @@ def main():
     print(f'Hello, {name}!')
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    for _ in range(3):
+    for i in range(3):
         number = random.randint(1, 100)
         print(f'Question: {number}')
         user_answer = prompt.string("Your answer: ")
@@ -30,7 +29,7 @@ def main():
 
         if user_answer != correct_answer:
             print(f"{user_answer} is wrong answer ;(."
-            f" Correct answer was {correct_answer}.")
+                  f" Correct answer was {correct_answer}.")
             print(f"Let's try again, {name}!")
             return
         print("Correct")
