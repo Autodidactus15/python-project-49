@@ -24,7 +24,8 @@ def main():
             print("Correct")
             counter += 1
         else:
-            print(f"{user_answer} is wrong answer ;(. Correct answer was '{answer}'.")
+            print(f"{user_answer} is wrong answer ;(."
+            f" Correct answer was '{answer}'.")
             print(f"Let's try again, {name}!")
             break   
     else:
