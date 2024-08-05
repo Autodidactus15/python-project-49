@@ -29,7 +29,7 @@ def main():
         answer = old_pr_list[number_3]
         pr_list[number_3] = ".."
 
-        print(f'Question: {pr_list[0]} {pr_list[1]}' 
+        print(f'Question: {pr_list[0]} {pr_list[1]} ' 
               f'{pr_list[2]} {pr_list[3]} {pr_list[4]} '
               f'{pr_list[5]} {pr_list[6]} {pr_list[7]}')
 
