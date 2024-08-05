@@ -46,7 +46,8 @@ def main():
                   f" Correct answer was {answer}.")
             print(f"Let's try again, {name}!")
             break
-    print(f'Congratulations, {name}!')
+    else:
+         print(f'Congratulations, {name}!')
 
 
 if __name__ == '__main__':
