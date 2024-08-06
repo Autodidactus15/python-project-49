@@ -14,28 +14,34 @@ def subtract(number_1, number_2):
     return number_1 - number_2
 
 
+def question():
+    number_1 = random.randint(1, 100)
+    number_2 = random.randint(1, 100)
+    random_operation = random.choice((multiply, subtract, sum_numbers))
+
+    if random_operation == multiply:
+        print(f"Question: {number_1} * {number_2}")
+        answer = multiply(number_1, number_2)
+        return answer
+    elif random_operation == subtract:
+        print(f"Question: {number_1} - {number_2}")
+        answer = subtract(number_1, number_2)
+        return answer
+    else:
+        print(f"Question: {number_1} + {number_2}")
+        answer = sum_numbers(number_1, number_2)
+        return answer
+
+
 def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print("What is the result of the expression?")
-
     counter = 0
+
     while counter < 3:
-        number_1 = random.randint(1, 100)
-        number_2 = random.randint(1, 100)
-        random_operation = random.choice((multiply, subtract, sum_numbers))
-
-        if random_operation == multiply:
-            print(f"Question: {number_1} * {number_2}")
-            answer = multiply(number_1, number_2)
-        elif random_operation == subtract:
-            print(f"Question: {number_1} - {number_2}")
-            answer = subtract(number_1, number_2)
-        else:
-            print(f"Question: {number_1} + {number_2}")
-            answer = sum_numbers(number_1, number_2)
-
+        answer = question()
         user_answer = int(input("Your answer: "))
 
         if user_answer == answer:

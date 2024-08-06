@@ -11,21 +11,28 @@ def is_prime(n):
     return True
 
 
+def question():
+    number = random.randint(1, 100)
+    print(f'Question: {number}')
+
+    if is_prime(number):
+        correct_answer = 'yes'
+        return correct_answer
+    else:
+        correct_answer = 'no'
+        return correct_answer
+
+
 def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    for i in range(3):
-        number = random.randint(1, 100)
-        print(f'Question: {number}')
-        user_answer = prompt.string("Your answer: ")
-
-        if is_prime(number):
-            correct_answer = 'yes'
-        else:
-            correct_answer = 'no'
+    counter = 0
+    while counter < 3:
+        correct_answer = question()
+        user_answer = input()
 
         if user_answer != correct_answer:
             print(f"{user_answer} is wrong answer ;(."
@@ -33,6 +40,8 @@ def main():
             print(f"Let's try again, {name}!")
             return
         print("Correct")
+
+        counter += 1
 
     print(f'Congratulations, {name}!')
 

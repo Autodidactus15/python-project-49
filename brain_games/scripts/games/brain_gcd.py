@@ -2,6 +2,18 @@ import prompt
 import random
 
 
+def question():
+    number_1 = random.randint(1, 100)
+    number_2 = random.randint(1, 100)
+    print(f'Question: {number_1} {number_2}')
+
+    while number_2 != 0:
+        number_1, number_2 = number_2, number_1 % number_2
+    else:
+        answer = number_1
+        return answer
+
+
 def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
@@ -10,15 +22,7 @@ def main():
 
     counter = 0
     while counter < 3:
-        number_1 = random.randint(1, 100)
-        number_2 = random.randint(1, 100)
-        print(f'Question: {number_1} {number_2}')
-
-        while number_2 != 0:
-            number_1, number_2 = number_2, number_1 % number_2
-        else:
-            answer = number_1
-
+        answer = question()
         user_answer = input("Your answer: ")
 
         if user_answer.isalpha():
