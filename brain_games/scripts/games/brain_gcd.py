@@ -2,16 +2,16 @@ import prompt
 import random
 
 
-def question():
+def get_question():
     number_1 = random.randint(1, 100)
     number_2 = random.randint(1, 100)
-    print(f'Question: {number_1} {number_2}')
+    question = f'Question: {number_1} {number_2}'
 
     while number_2 != 0:
         number_1, number_2 = number_2, number_1 % number_2
     else:
         answer = number_1
-        return answer
+        return question, answer
 
 
 def main():
@@ -20,20 +20,13 @@ def main():
     print(f'Hello, {name}!')
     print("Find the greatest common divisor of given numbers.")
 
-    counter = 0
-    while counter < 3:
-        answer = question()
-        user_answer = input("Your answer: ")
-
-        if user_answer.isalpha():
-            print("Please, insert a number")
-            break
-
-        user_answer = int(user_answer)
+    for i in range(3):
+        question, answer = get_question()
+        print(question)
+        user_answer = prompt.integer("Your answer: ")
 
         if user_answer == answer:
             print("Correct")
-            counter += 1
         else:
             print(f"{user_answer} is wrong answer ;(."
                   f" Correct answer was {answer}.")

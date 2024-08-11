@@ -11,16 +11,16 @@ def is_prime(n):
     return True
 
 
-def question():
+def get_question():
     number = random.randint(1, 100)
-    print(f'Question: {number}')
+    question = f'Question: {number}'
 
     if is_prime(number):
         correct_answer = 'yes'
-        return correct_answer
+        return question, correct_answer
     else:
         correct_answer = 'no'
-        return correct_answer
+        return question, correct_answer
 
 
 def main():
@@ -29,10 +29,10 @@ def main():
     print(f'Hello, {name}!')
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    counter = 0
-    while counter < 3:
-        correct_answer = question()
-        user_answer = input()
+    for i in range(3):
+        question, correct_answer = get_question()
+        print(question)
+        user_answer = prompt.string("Your answer: ")
 
         if user_answer != correct_answer:
             print(f"{user_answer} is wrong answer ;(."
@@ -40,8 +40,6 @@ def main():
             print(f"Let's try again, {name}!")
             return
         print("Correct")
-
-        counter += 1
 
     print(f'Congratulations, {name}!')
 

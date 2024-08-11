@@ -14,23 +14,23 @@ def subtract(number_1, number_2):
     return number_1 - number_2
 
 
-def question():
+def get_question():
     number_1 = random.randint(1, 100)
     number_2 = random.randint(1, 100)
     random_operation = random.choice((multiply, subtract, sum_numbers))
 
     if random_operation == multiply:
-        print(f"Question: {number_1} * {number_2}")
+        question = f"Question: {number_1} * {number_2}"
         answer = multiply(number_1, number_2)
-        return answer
+        return question, answer
     elif random_operation == subtract:
-        print(f"Question: {number_1} - {number_2}")
+        question = f"Question: {number_1} - {number_2}"
         answer = subtract(number_1, number_2)
-        return answer
-    else:
-        print(f"Question: {number_1} + {number_2}")
+        return question, answer
+    elif random_operation == sum_numbers:
+        question = f"Question: {number_1} + {number_2}"
         answer = sum_numbers(number_1, number_2)
-        return answer
+        return question, answer
 
 
 def main():
@@ -38,18 +38,17 @@ def main():
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print("What is the result of the expression?")
-    counter = 0
 
-    while counter < 3:
-        answer = question()
-        user_answer = int(input("Your answer: "))
+    for i in range(3):
+        question, answer = get_question()
+        print(question)
+        user_answer = prompt.integer("Your answer: ")
 
         if user_answer == answer:
             print("Correct")
-            counter += 1
         else:
             print(f"{user_answer} is wrong answer ;(."
-                  " Correct answer was {answer}.")
+                  f" Correct answer was {answer}.")
             print(f"Let's try again, {name}!")
             break
     else:

@@ -2,16 +2,16 @@ import random
 import prompt
 
 
-def question():
+def get_question():
     number = random.randint(1, 1000)
-    print(f"Question: {number}")
+    question = f"Question: {number}"
 
     if number % 2 == 0:
         answer = 'yes'
-        return answer
+        return question, answer
     else:
         answer = 'no'
-        return answer
+        return question, answer
 
 
 def main():
@@ -20,14 +20,13 @@ def main():
     print(f'Hello, {name}!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
-    counter = 0
-    while counter < 3:
-        answer = question()
-        user_answer = input("Your answer: ")
+    for i in range(3):
+        question, answer = get_question()
+        print(question)
+        user_answer = prompt.string("Your answer: ")
 
         if user_answer == answer:
             print("Correct")
-            counter += 1
         else:
             print(f"{user_answer} is wrong answer ;(."
                   f" Correct answer was '{answer}'.")

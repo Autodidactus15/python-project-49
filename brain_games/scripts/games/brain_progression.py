@@ -12,7 +12,7 @@ def progression(number_1, number_2):
     return progression_list
 
 
-def question():
+def get_question():
     number_1 = random.randint(1, 100)
     number_2 = random.randint(1, 5)
     number_3 = random.randint(0, 7)
@@ -21,10 +21,10 @@ def question():
     old_pr_list = pr_list.copy()
     answer = old_pr_list[number_3]
     pr_list[number_3] = ".."
-    print(f'Question: {pr_list[0]} {pr_list[1]} '
-          f'{pr_list[2]} {pr_list[3]} {pr_list[4]} '
-          f'{pr_list[5]} {pr_list[6]} {pr_list[7]}')
-    return answer
+    question = (f'Question: {pr_list[0]} {pr_list[1]} '
+                f'{pr_list[2]} {pr_list[3]} {pr_list[4]} '
+                f'{pr_list[5]} {pr_list[6]} {pr_list[7]}')
+    return question, answer
 
 
 def main():
@@ -33,18 +33,13 @@ def main():
     print(f'Hello, {name}!')
     print("What number is missing in the progression?")
 
-    counter = 0
-    while counter < 3:
-        answer = question()
-        user_answer = input("Your answer: ")
-        if user_answer.isalpha():
-            print("Please, insert a number")
-            break
+    for i in range(3):
+        question, answer = get_question()
+        print(question)
+        user_answer = prompt.integer("Your answer: ")
 
-        user_answer = int(user_answer)
         if user_answer == int(answer):
             print("Correct")
-            counter += 1
         else:
             print(f"{user_answer} is wrong answer"
                   f" ;(. Correct answer was {answer}.")
