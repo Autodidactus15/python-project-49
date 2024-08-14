@@ -1,4 +1,3 @@
-import prompt
 import random
 
 
@@ -25,29 +24,3 @@ def get_question():
                 f'{pr_list[2]} {pr_list[3]} {pr_list[4]} '
                 f'{pr_list[5]} {pr_list[6]} {pr_list[7]}')
     return question, answer
-
-
-def main():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print("What number is missing in the progression?")
-
-    for i in range(3):
-        question, answer = get_question()
-        print(question)
-        user_answer = prompt.integer("Your answer: ")
-
-        if user_answer == int(answer):
-            print("Correct")
-        else:
-            print(f"{user_answer} is wrong answer"
-                  f" ;(. Correct answer was {answer}.")
-            print(f"Let's try again, {name}!")
-            break
-    else:
-        print(f'Congratulations, {name}!')
-
-
-if __name__ == '__main__':
-    main()
