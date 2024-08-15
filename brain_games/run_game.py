@@ -6,7 +6,7 @@ def run_game(game):
     for i in range(3):
         question, answer = game.get_question()
         print(question)
-        if str(answer).isdigit():
+        if isinstance(answer, int):
             user_answer = prompt.integer("Your answer: ")
         else:
             user_answer = prompt.string("Your answer: ")
