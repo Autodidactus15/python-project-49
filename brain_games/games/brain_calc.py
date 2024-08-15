@@ -1,5 +1,5 @@
 import random
-
+import prompt
 
 def multiply(number_1, number_2):
     return number_1 * number_2
@@ -11,6 +11,14 @@ def sum_numbers(number_1, number_2):
 
 def subtract(number_1, number_2):
     return number_1 - number_2
+
+
+def say_hello():
+    print('Welcome to the Brain Games!')
+    global name
+    name = prompt.string('May I have your name? ')
+    print(f'Hello, {name}!')
+    print("What is the result of the expression?")
 
 
 def get_question():

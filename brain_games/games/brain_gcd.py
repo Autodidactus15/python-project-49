@@ -1,4 +1,13 @@
 import random
+import prompt
+
+
+def say_hello():
+    print('Welcome to the Brain Games!')
+    global name
+    name = prompt.string('May I have your name? ')
+    print(f'Hello, {name}!')
+    print("Find the greatest common divisor of given numbers.")
 
 
 def get_question():
