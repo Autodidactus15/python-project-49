@@ -8,9 +8,8 @@ RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 def say_hello():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
-    return name
     print(f'Hello, {name}!')
-
+    return name
 
 
 def is_prime(n):

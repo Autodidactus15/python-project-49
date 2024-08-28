@@ -8,8 +8,8 @@ RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
 def say_hello():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
-    return name
     print(f'Hello, {name}!')
+    return name
 
 
 def get_question():

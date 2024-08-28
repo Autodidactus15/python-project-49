@@ -8,8 +8,8 @@ RULE = "What number is missing in the progression?"
 def say_hello():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
-    return name
     print(f'Hello, {name}!')
+    return name
 
 
 def progression(start_point, step):
@@ -32,4 +32,4 @@ def get_question():
     answer = old_progression_set[missing_number]
     progression_set[missing_number] = ".."
     question = (" ".join(progression_set))
-    return question, answer
+    return question, str(answer)
