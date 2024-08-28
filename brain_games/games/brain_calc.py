@@ -2,40 +2,42 @@ import random
 import prompt
 
 
-def multiply(number_1, number_2):
-    return number_1 * number_2
+RULE = "What is the result of the expression?"
 
 
-def sum_numbers(number_1, number_2):
-    return number_1 + number_2
+def multiply(first_number, second_number):
+    return first_number * second_number
 
 
-def subtract(number_1, number_2):
-    return number_1 - number_2
+def sum_numbers(first_number, second_number):
+    return first_number + second_number
+
+
+def subtract(first_number, second_number):
+    return first_number - second_number
 
 
 def say_hello():
     print('Welcome to the Brain Games!')
-    global name
     name = prompt.string('May I have your name? ')
+    return name
     print(f'Hello, {name}!')
-    print("What is the result of the expression?")
 
 
 def get_question():
-    number_1 = random.randint(1, 100)
-    number_2 = random.randint(1, 100)
+    first_number = random.randint(1, 100)
+    second_number = random.randint(1, 100)
     random_operation = random.choice((multiply, subtract, sum_numbers))
 
     if random_operation == multiply:
-        question = f"Question: {number_1} * {number_2}"
-        answer = multiply(number_1, number_2)
-        return question, answer
+        question = f"{first_number} * {second_number}"
+        answer = multiply(first_number, second_number)
+        return question, str(answer)
     elif random_operation == subtract:
-        question = f"Question: {number_1} - {number_2}"
-        answer = subtract(number_1, number_2)
-        return question, answer
+        question = f"{first_number} - {second_number}"
+        answer = subtract(first_number, second_number)
+        return question, str(answer)
     elif random_operation == sum_numbers:
-        question = f"Question: {number_1} + {number_2}"
-        answer = sum_numbers(number_1, number_2)
-        return question, answer
+        question = f"{first_number} + {second_number}"
+        answer = sum_numbers(first_number, second_number)
+        return question, str(answer)

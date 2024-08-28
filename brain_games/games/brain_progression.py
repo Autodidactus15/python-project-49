@@ -2,34 +2,34 @@ import random
 import prompt
 
 
+RULE = "What number is missing in the progression?"
+
+
 def say_hello():
     print('Welcome to the Brain Games!')
-    global name
     name = prompt.string('May I have your name? ')
+    return name
     print(f'Hello, {name}!')
-    print("What number is missing in the progression?")
 
 
-def progression(number_1, number_2):
+def progression(start_point, step):
     length = 10
     progression_list = []
     while length != 0:
-        progression_list.append(number_1 + number_2)
+        progression_list.append(start_point + step)
         length -= 1
-        number_1 += number_2
+        start_point += step
     return progression_list
 
 
 def get_question():
-    number_1 = random.randint(1, 100)
-    number_2 = random.randint(1, 5)
-    number_3 = random.randint(0, 7)
+    start_point = random.randint(1, 100)
+    step = random.randint(1, 5)
+    missing_number = random.randint(0, 7)
 
-    pr_list = progression(number_1, number_2)
-    old_pr_list = pr_list.copy()
-    answer = old_pr_list[number_3]
-    pr_list[number_3] = ".."
-    question = (f'Question: {pr_list[0]} {pr_list[1]} '
-                f'{pr_list[2]} {pr_list[3]} {pr_list[4]} '
-                f'{pr_list[5]} {pr_list[6]} {pr_list[7]}')
+    progression_set = progression(start_point, step)
+    old_progression_set = progression_set.copy()
+    answer = old_progression_set[missing_number]
+    progression_set[missing_number] = ".."
+    question = (" ".join(progression_set))
     return question, answer

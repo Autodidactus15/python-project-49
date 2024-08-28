@@ -2,12 +2,15 @@ import random
 import prompt
 
 
+RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+
 def say_hello():
     print('Welcome to the Brain Games!')
-    global name
     name = prompt.string('May I have your name? ')
+    return name
     print(f'Hello, {name}!')
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+
 
 
 def is_prime(n):
@@ -21,11 +24,11 @@ def is_prime(n):
 
 def get_question():
     number = random.randint(1, 100)
-    question = f'Question: {number}'
+    question = f'{number}'
 
     if is_prime(number):
         answer = 'yes'
         return question, answer
     else:
         answer = 'no'
-        return question, answer
+        return question, str(answer)
