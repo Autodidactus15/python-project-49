@@ -31,5 +31,5 @@ def get_question():
     old_progression_set = progression_set.copy()
     answer = old_progression_set[missing_number]
     progression_set[missing_number] = ".."
-    question = (" ".join(progression_set))
+    question = (" ".join(list(map(str, progression_set))))
     return question, str(answer)
