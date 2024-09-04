@@ -1,15 +1,9 @@
 import random
-import prompt
 
 
 RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-
-
-def say_hello():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
+MAX_NUMBER = 100
+MIN_NUMBER = 1
 
 
 def is_prime(n):
@@ -22,7 +16,7 @@ def is_prime(n):
 
 
 def get_question():
-    number = random.randint(1, 100)
+    number = random.randint(MIN_NUMBER, MAX_NUMBER)
     question = f'{number}'
 
     if is_prime(number):

@@ -1,26 +1,16 @@
 import random
-import prompt
+import math
 
 
 RULE = "Find the greatest common divisor of given numbers."
-
-
-def say_hello():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
+MAX_NUMBER = 100
+MIN_NUMBER = 1
 
 
 def get_question():
-    first_number = random.randint(1, 100)
-    second_number = random.randint(1, 100)
+    first_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    second_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     question = f'{first_number} {second_number}'
 
-    while second_number != 0:
-        temporary = first_number % second_number
-        first_number = second_number
-        second_number = temporary
-    else:
-        answer = first_number
-        return question, str(answer)
+    answer = math.gcd(first_number, second_number)
+    return question, str(answer)

@@ -1,8 +1,9 @@
 import random
-import prompt
 
 
 RULE = "What is the result of the expression?"
+MAX_NUMBER = 100
+MIN_NUMBER = 1
 
 
 def multiply(first_number, second_number):
@@ -17,16 +18,9 @@ def subtract(first_number, second_number):
     return first_number - second_number
 
 
-def say_hello():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
-
-
 def get_question():
-    first_number = random.randint(1, 100)
-    second_number = random.randint(1, 100)
+    first_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    second_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     random_operation = random.choice((multiply, subtract, sum_numbers))
 
     if random_operation == multiply:
