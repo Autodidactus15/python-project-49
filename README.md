@@ -1,69 +1,52 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Autodidactus15/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Autodidactus15/python-project-49/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/06b1a2871c9a446d5568/maintainability)](https://codeclimate.com/github/Autodidactus15/python-project-49/maintainability)
-[![asciicast](https://asciinema.org/a/wOoi8w8qeark6j0ZmdMekuv3A.svg)](https://asciinema.org/a/wOoi8w8qeark6j0ZmdMekuv3A)
-[![asciicast](https://asciinema.org/a/rCPFYYvrcgVGHnZzpLUqu4T72.svg)](https://asciinema.org/a/rCPFYYvrcgVGHnZzpLUqu4T72)
-[![asciicast](https://asciinema.org/a/tD5qroMhdeZZm7PnqPvXHSqvv.svg)](https://asciinema.org/a/tD5qroMhdeZZm7PnqPvXHSqvv)
-[![asciicast](https://asciinema.org/a/KktIwfkRxQOfyn5oKRpikfDgY.svg)](https://asciinema.org/a/KktIwfkRxQOfyn5oKRpikfDgY)
-[![asciicast](https://asciinema.org/a/MbA3nuMeCutCSk5ioH8ryRxyC.svg)](https://asciinema.org/a/MbA3nuMeCutCSk5ioH8ryRxyC)
+# Brain Games
 
-## Instructions
+Пять математических игр в терминале на Python. Учебный проект Hexlet для практики работы с функциями, модулями и CLI-командами. Общий цикл раундов отделён от логики каждой игры.
 
-### Installation Guide for Brain-games
+[![Hexlet checks](https://github.com/Autodidactus15/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Autodidactus15/python-project-49/actions)
 
-1. Clone the repository
-   
-   git clone "https://github.com/Autodidactus15/python-project-49"
-   
+## Установка
 
-2. Install dependencies and create virtual environment
-   
-   make install
-   
+Нужны Python `>=3.12,<4.0` и Poetry. Зависимости и команды описаны в [pyproject.toml](pyproject.toml).
 
-3. Install the package
-   
-   make package-install
-   
- Enjoy playing Brain-games!
+```bash
+git clone https://github.com/Autodidactus15/python-project-49.git
+cd python-project-49
+poetry install
+```
 
- ### Start Games
+## Игры
 
-How to Launch the Games
+Запускайте команды из каталога проекта. Для победы нужно дать три правильных ответа подряд. Первая ошибка завершает партию; для новой партии запустите команду ещё раз. Интерфейс игр на английском.
 
-To play any of the games, simply open your terminal and run the following commands:
+| Команда | Задача | Формат ответа |
+| --- | --- | --- |
+| `poetry run brain-even` | Определить, чётное ли число | `yes` или `no` |
+| `poetry run brain-calc` | Вычислить сумму, разность или произведение | Целое число |
+| `poetry run brain-gcd` | Найти наибольший общий делитель двух чисел | Целое число |
+| `poetry run brain-progression` | Восстановить пропущенное число арифметической прогрессии | Целое число |
+| `poetry run brain-prime` | Определить, простое ли число | `yes` или `no` |
 
-- brain-even
-- brain-gcd
-- brain-progression
-- brain-prime
-- brain-calc
+Команда `poetry run brain-games` выводит приветствие и спрашивает имя. Для запуска игры используйте одну из команд выше.
 
-Game Rules
+## Разработка
 
-1. Brain Even
-   - You will be presented with a random number.
-   - Your task is to determine if the number is even or odd.
-   - To win the game, you need to provide 3 correct answers.
+```bash
+poetry run flake8 brain_games
+poetry build
+```
 
-2. Brain GCD
-   - You will receive two random numbers.
-   - Your goal is to find the greatest common divisor (GCD) of the two numbers.
-   - Answer correctly 3 times to win the game.
+Первая команда проверяет стиль кода, вторая собирает пакет в `dist/`. В [Makefile](Makefile) есть эквиваленты: `make install`, `make lint` и `make build`. Для них нужен Make.
 
-3. Brain Progression
-   - You will see a sequence of numbers with one number missing.
-   - Your task is to determine the missing number in the arithmetic progression.
-   - You must answer correctly 3 times to win the game.
+После `make build` команда `make package-install` устанавливает wheel через `python3 -m pip install dist/*.whl`. Это отдельный способ установки пакета; для игр через `poetry run` достаточно `poetry install`.
 
-4. Brain Prime
-   - A random number will be shown.
-   - You need to decide whether the number is prime or not.
-   - Provide 3 correct answers to win the game.
+Исходники:
 
-5. Brain Calc
-   - You will encounter random mathematical expressions.
-   - Your job is to compute the result of the expression.
-   - You need to get 3 answers correct to win the game.
+- [brain_games/games](brain_games/games): правила и генерация заданий для пяти игр.
+- [brain_games/run_game.py](brain_games/run_game.py): общий цикл раундов и проверка ответов.
+- [brain_games/scripts](brain_games/scripts): точки входа CLI-команд.
 
-Good luck, and enjoy sharpening your brain with these games!
+## Записи запуска
+
+Сохранённые демонстрации в asciinema:
+
+[Запись 1](https://asciinema.org/a/wOoi8w8qeark6j0ZmdMekuv3A) · [Запись 2](https://asciinema.org/a/rCPFYYvrcgVGHnZzpLUqu4T72) · [Запись 3](https://asciinema.org/a/tD5qroMhdeZZm7PnqPvXHSqvv) · [Запись 4](https://asciinema.org/a/KktIwfkRxQOfyn5oKRpikfDgY) · [Запись 5](https://asciinema.org/a/MbA3nuMeCutCSk5ioH8ryRxyC)
